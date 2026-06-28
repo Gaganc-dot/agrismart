@@ -85,7 +85,7 @@ app.use((req, res, next) => {
 // ── CORS ──────────────────────────────────────────────────────
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin) || origin === process.env.CLIENT_URL) {
+    if (!origin || /^http:\/\/(localhost|127\.0\.0.1)(:\d+)?$/.test(origin) || origin === process.env.CLIENT_URL || /\.vercel\.app$/.test(origin)) {
       return callback(null, true);
     }
     callback(new Error("Not allowed by CORS"));
