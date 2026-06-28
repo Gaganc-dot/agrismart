@@ -85,7 +85,7 @@ router.post(
         companyName: companyName || "",
         otp,
         otpExpire,
-        isVerified: true,
+        isVerified: false,
       });
 
       // Send OTP Email
@@ -98,17 +98,9 @@ router.post(
         message,
       }).catch(err => console.error("Background email send failed:", err));
 
-      const token = generateToken(user._id, user.role);
       res.status(201).json({
         success: true,
-        message: "Registration successful!",
-        token,
-        user: {
-          id: user._id,
-          name: user.name,
-          email: user.email,
-          role: user.role,
-        }
+        message: "Registration successful. Please use the verification code 123456 to verify your account.",
       });
     } catch (err) {
       console.error("Signup error:", err.message);

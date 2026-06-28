@@ -64,14 +64,8 @@ export default function SignUp() {
         `${API}/api/auth/signup`,
         payload
       );
-      toast.success("Welcome, registration successful! 👋");
-      localStorage.setItem("token", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
-      
-      const userRole = data.user.role;
-      if (userRole === "farmer") navigate("/farmer/dashboard");
-      else if (userRole === "buyer") navigate("/buyer/dashboard");
-      else navigate("/");
+      toast.success(data.message || "Registration successful! Please verify your account.");
+      navigate("/verify-email", { state: { email: form.email } });
     } catch (err) {
       if (err.response?.data?.errors) {
         err.response.data.errors.forEach((error) => toast.error(error.msg));
