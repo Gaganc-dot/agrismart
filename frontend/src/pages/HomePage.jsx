@@ -105,14 +105,7 @@ function Hero() {
               Join as Buyer <ShoppingBag className="w-4 h-4" />
             </Link>
           </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} className="flex items-center gap-6 mt-10">
-            {[{value:"10K+",label:"Farmers"},{value:"5K+",label:"Buyers"},{value:"₹2Cr+",label:"Transactions"}].map((s,i) => (
-              <div key={i} className="text-center">
-                <p className="text-white font-bold text-2xl">{s.value}</p>
-                <p className="text-primary-200 text-xs">{s.label}</p>
-              </div>
-            ))}
-          </motion.div>
+
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.2 }}
           className="hidden md:flex flex-col gap-4">
