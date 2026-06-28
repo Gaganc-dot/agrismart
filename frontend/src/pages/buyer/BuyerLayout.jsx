@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import NotificationCenter from "../../components/NotificationCenter";
 import LanguageSelector from "../../components/LanguageSelector";
-import ChatWidget from "../../components/ChatWidget";
+
 
 export const BuyerLangContext = createContext("en");
 export const useBuyerLang = () => useContext(BuyerLangContext);
@@ -204,7 +204,7 @@ export default function BuyerLayout({ children }) {
             {children}
           </main>
         </div>
-        <ChatWidget />
+
       </div>
     </BuyerLangContext.Provider>
   );

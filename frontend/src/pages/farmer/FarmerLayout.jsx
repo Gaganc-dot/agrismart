@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import NotificationCenter from "../../components/NotificationCenter";
 import LanguageSelector from "../../components/LanguageSelector";
-import ChatWidget from "../../components/ChatWidget";
+
 
 /** Shared helper — persists lang to localStorage + backend */
 async function changeLang(code, i18n) {
@@ -258,7 +258,7 @@ export default function FarmerLayout({ children }) {
           {children}
         </main>
       </div>
-      <ChatWidget />
+
     </div>
   );
 }
