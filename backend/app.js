@@ -65,11 +65,11 @@ app.use((req, res, next) => {
 const isTest = process.env.NODE_ENV === "test";
 
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
+  windowMs: 1 * 60 * 1000,
   max: isTest ? 1000 : 20,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { success: false, message: "Too many requests. Please try again after 15 minutes." },
+  message: { success: false, message: "Too many requests. Please try again after 1 minute." },
 });
 
 const apiLimiter = rateLimit({

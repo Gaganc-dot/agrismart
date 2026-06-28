@@ -136,11 +136,11 @@ app.use((req, res, next) => {
 
 // ── Rate Limiters ─────────────────────────────────────────────
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
+  windowMs: 1 * 60 * 1000,
   max: 20,
   standardHeaders: true,
   legacyHeaders: false,
-  message: { success: false, message: "Too many requests. Please try again after 15 minutes." },
+  message: { success: false, message: "Too many requests. Please try again after 1 minute." },
 });
 
 const apiLimiter = rateLimit({
