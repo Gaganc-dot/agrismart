@@ -46,7 +46,7 @@ function Navbar() {
           </div>
         </Link>
         <div className={`hidden md:flex items-center gap-8 text-sm font-semibold ${scrolled ? "text-gray-600" : "text-white/80"}`}>
-          {["features","how-it-works","stats","testimonials"].map(id => (
+          {["features","how-it-works"].map(id => (
             <a key={id} href={`#${id}`} className="hover:text-primary-500 transition-colors capitalize">{id.replace("-"," ")}</a>
           ))}
         </div>
@@ -61,7 +61,7 @@ function Navbar() {
       {mobileOpen && (
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-white border-b border-gray-100 px-6 py-4 space-y-3">
-          {["features","how-it-works","stats","testimonials"].map(id => (
+          {["features","how-it-works"].map(id => (
             <a key={id} href={`#${id}`} onClick={() => setMobileOpen(false)}
               className="block text-sm font-semibold text-gray-700 hover:text-primary-600 capitalize py-1">{id.replace("-"," ")}</a>
           ))}
@@ -277,63 +277,7 @@ function HowItWorks() {
   );
 }
 
-function Stats() {
-  const stats = [
-    { icon:<Users className="w-6 h-6" />,       value:"10,000+", label:"Registered Farmers", color:"text-green-400" },
-    { icon:<ShoppingBag className="w-6 h-6" />,  value:"5,000+",  label:"Active Buyers",      color:"text-yellow-400" },
-    { icon:<Package className="w-6 h-6" />,      value:"50,000+", label:"Orders Fulfilled",   color:"text-blue-400" },
-    { icon:<TrendingUp className="w-6 h-6" />,   value:"₹2 Cr+",  label:"Total Transactions", color:"text-purple-400" },
-  ];
-  return (
-    <section id="stats" className="py-20 hero-gradient relative overflow-hidden">
-      <div className="absolute inset-0 bg-dot-pattern opacity-10" style={{ backgroundSize: "28px 28px" }} />
-      <div className="relative max-w-6xl mx-auto px-6">
-        <AnimatedSection className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((s,i) => (
-            <motion.div key={i} variants={fadeUp} className="text-center">
-              <div className={`inline-flex items-center justify-center w-14 h-14 bg-white/10 rounded-2xl mb-4 ${s.color}`}>{s.icon}</div>
-              <p className="text-white font-bold text-3xl font-display">{s.value}</p>
-              <p className="text-primary-200 text-sm mt-1">{s.label}</p>
-            </motion.div>
-          ))}
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-}
 
-function Testimonials() {
-  const testimonials = [
-    { name:"Rajesh Patil",  role:"Farmer, Nashik",            emoji:"👨‍🌾", text:"Agri-Smart Connect changed my life. I now sell directly to buyers and earn 40% more. No more middlemen!", rating:5 },
-    { name:"Priya Sharma",  role:"Buyer, FreshMart Pvt. Ltd.", emoji:"👩‍💼", text:"We source all vegetables directly from farmers now. The quality is excellent and prices are much better.", rating:5 },
-    { name:"Suresh Yadav",  role:"Farmer, Pune",              emoji:"👨‍🌾", text:"Very easy to use. I listed my tomatoes and got my first order within 2 days. Payment was fast and transparent.", rating:5 },
-  ];
-  return (
-    <section id="testimonials" className="py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <AnimatedSection className="text-center mb-16">
-          <motion.div variants={fadeUp}>
-            <span className="text-primary-600 font-bold text-sm uppercase tracking-widest">Testimonials</span>
-            <h2 className="font-display text-4xl font-bold text-gray-900 mt-2 mb-4">What Our Users Say</h2>
-          </motion.div>
-        </AnimatedSection>
-        <AnimatedSection className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t,i) => (
-            <motion.div key={i} variants={fadeUp} whileHover={{ y:-4 }}
-              className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-card-lg transition-all duration-300">
-              <div className="flex gap-1 mb-4">{[...Array(t.rating)].map((_,j) => <Star key={j} className="w-4 h-4 text-earth-400 fill-earth-400" />)}</div>
-              <p className="text-gray-600 text-sm leading-relaxed mb-6">&quot;{t.text}&quot;</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center text-xl">{t.emoji}</div>
-                <div><p className="font-bold text-gray-800 text-sm">{t.name}</p><p className="text-gray-400 text-xs">{t.role}</p></div>
-              </div>
-            </motion.div>
-          ))}
-        </AnimatedSection>
-      </div>
-    </section>
-  );
-}
 
 function CTA() {
   return (
@@ -390,8 +334,6 @@ export default function HomePage() {
       <WeatherSection />
       <Features />
       <HowItWorks />
-      <Stats />
-      <Testimonials />
       <CTA />
       <Footer />
     </div>
