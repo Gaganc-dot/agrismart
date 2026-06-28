@@ -253,7 +253,11 @@ function MarketContent() {
       const { data } = await axios.get(`${API}/api/mandi/prices`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      setPrices(data.data || []);
+      const items = (data.data || []).map(p => ({
+        ...p,
+        name: p.name || p.commodity,
+      }));
+      setPrices(items);
     } catch {
       // fallback static data
       setPrices([]);

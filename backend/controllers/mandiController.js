@@ -145,6 +145,7 @@ exports.getMandiPricesLegacy = async (req, res) => {
 
       return {
         commodity: item.commodity,
+        name: item.commodity,
         emoji: item.emoji,
         category: item.category,
         unit: item.unit,

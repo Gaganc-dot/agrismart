@@ -158,9 +158,10 @@ function DashboardContent() {
     setMandiLoad(true);
     try {
       const { data } = await axios.get(`${API}/api/mandi/prices`);
-      const items = (data.prices || []).map(p => ({
+      const items = (data.data || []).map(p => ({
         ...p,
-        emoji: CROP_EMOJIS[p.name?.toLowerCase()] || "🌾",
+        name: p.name || p.commodity,
+        emoji: CROP_EMOJIS[(p.name || p.commodity)?.toLowerCase()] || "🌾",
       }));
       setMandi(items.slice(0, 8));
     } catch { /* silent */ }
