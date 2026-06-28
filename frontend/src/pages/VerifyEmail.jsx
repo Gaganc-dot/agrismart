@@ -88,6 +88,9 @@ export default function VerifyEmail() {
           </div>
           <h2 className="text-3xl font-bold text-gray-800 font-display">Verify Email</h2>
           <p className="text-gray-500 mt-2">Enter the 6-digit code sent to your email.</p>
+          <p className="text-xs text-green-600 font-semibold mt-2 bg-green-50 px-3 py-1.5 rounded-lg border border-green-100 inline-block">
+            💡 Testing: Use code <strong>123456</strong> if the email is blocked by host ports.
+          </p>
         </div>
 
         <form onSubmit={handleVerify} className="space-y-6">
