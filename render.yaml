@@ -1,0 +1,28 @@
+services:
+  # =====================================
+  # BACKEND SERVICE (Node.js + Express)
+  # =====================================
+  - type: web
+    name: agri-smart-connect-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
+    envVars:
+      - key: PORT
+        value: "8000"
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+        # Add your MongoDB connection string manually in Render dashboard
+      - key: JWT_SECRET
+        sync: false
+        # Add your JWT secret manually in Render dashboard
+      - key: VITE_WEATHER_API_KEY
+        sync: false
+        # Add your weather API key manually
+      - key: GROQ_API_KEY
+        sync: false
+        # Add your Groq API key manually

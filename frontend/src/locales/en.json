@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "cropRec": "Crop Recommendation",
+    "weather": "Weather Forecast",
+    "marketPrices": "Market Prices",
+    "sellCrops": "Sell Crops",
+    "fertilizer": "Fertilizer Advice",
+    "disease": "Disease Detection",
+    "schemes": "Government Schemes",
+    "expenses": "Expense Tracker",
+    "profit": "Profit Prediction",
+    "community": "Community Forum",
+    "logout": "Logout",
+    "language": "Language",
+    "support": "Contact & Support"
+  },
+  "common": {
+    "hello": "Hello",
+    "farmer": "Farmer",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "reset": "Reset",
+    "save": "Save",
+    "cancel": "Cancel",
+    "add": "Add",
+    "viewAll": "View All",
+    "action": "Action"
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "subtitle": "Here is what's happening with your farm and sales today.",
+    "netBalance": "Net Balance",
+    "revenue": "Total Revenue",
+    "expenses": "Total Expenses",
+    "activeListings": "Active Listings",
+    "orders": "New Orders",
+    "revenueGrowth": "Revenue Growth",
+    "recentActivity": "Recent Activity",
+    "listNew": "List New Crop",
+    "insights": "Smart Assistant Insights"
+  },
+  "crop": {
+    "title": "Crop Recommendation",
+    "subtitle": "Get personalized crop suggestions based on your soil and climate",
+    "predict": "Predict Best Crop",
+    "soilTypes": ["Black Soil", "Red Soil", "Alluvial Soil", "Sandy Soil", "Loamy Soil", "Clay Soil", "Laterite Soil"],
+    "seasons": ["Kharif (Monsoon)", "Rabi (Winter)", "Zaid (Summer)", "Year Round"],
+    "waterLevels": ["Rain-fed only", "Limited Irrigation", "Full Irrigation", "Drip Irrigation"],
+    "budgets": ["Low (< ₹10k/acre)", "Medium (₹10k–₹30k/acre)", "High (> ₹30k/acre)"],
+    "states": ["Maharashtra","Punjab","Uttar Pradesh","Madhya Pradesh","Rajasthan","Gujarat","Karnataka","Andhra Pradesh","Tamil Nadu","Bihar","West Bengal","Haryana","Other"]
+  },
+  "fertilizer": {
+    "title": "Fertilizer Advice",
+    "subtitle": "Optimize your crop yield with AI-powered fertilizer plans",
+    "crop": "Crop Name *",
+    "soil": "Soil Type *",
+    "stage": "Growth Stage *",
+    "problem": "Current Problem (optional)",
+    "area": "Farm Area (acres)",
+    "budget": "Budget Level",
+    "generate": "Generate Smart Plan",
+    "soilTypes": ["Black Soil", "Red Soil", "Alluvial Soil", "Sandy Soil", "Loamy Soil", "Clay Soil", "Laterite Soil"],
+    "stages": ["Seed/Germination", "Seedling", "Vegetative Growth", "Flowering", "Fruiting/Grain Filling", "Harvesting"],
+    "budgets": ["Low (< ₹5,000)", "Medium (₹5,000–₹15,000)", "High (> ₹15,000)"]
+  },
+  "profit": {
+    "title": "Profit Prediction",
+    "subtitle": "Analyze potential ROI and financial risks before planting",
+    "calculate": "Calculate Projections",
+    "revenue": "Expected Revenue",
+    "roi": "Return on Investment",
+    "breakEven": "Break-even Point",
+    "risk": "Risk Assessment"
+  },
+  "forum": {
+    "title": "Community Forum",
+    "subtitle": "Share knowledge with fellow farmers",
+    "newPost": "Create Post",
+    "search": "Search forum...",
+    "reply": "Reply",
+    "replies": "Replies",
+    "categories": {
+      "crop": "Crop Issues",
+      "pest": "Pest & Disease",
+      "general": "General"
+    }
+  },
+  "marketplace": {
+    "title": "Agri Marketplace",
+    "subtitle": "Direct trade between farmers and buyers",
+    "list": "List New Product",
+    "buy": "Browse Products",
+    "myListings": "My Listings",
+    "productName": "Product Name",
+    "price": "Price per Unit",
+    "quantity": "Available Quantity",
+    "location": "Trade Location",
+    "sold": "Mark as Sold",
+    "available": "Available"
+  },
+  "market": {
+    "title": "Market Prices",
+    "subtitle": "Real-time mandi prices across India",
+    "search": "Search mandi or crop...",
+    "arrival": "Arrival Date",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "modalPrice": "Modal Price",
+    "trending": "Trending Crops"
+  },
+  "weather": {
+    "title": "Weather Forecast",
+    "subtitle": "Real-time updates and 7-day agricultural outlook",
+    "humidity": "Humidity",
+    "wind": "Wind Speed",
+    "rain": "Rain Chance",
+    "visibility": "Visibility",
+    "pressure": "Pressure",
+    "uv": "UV Index"
+  },
+  "disease": {
+    "title": "Disease Detection",
+    "subtitle": "Upload a photo to diagnose plant diseases instantly",
+    "upload": "Upload Crop Photo",
+    "analyze": "Analyze Image",
+    "scanning": "AI Scanning in Progress...",
+    "severity": "Severity Level",
+    "treatment": "Treatment Plan",
+    "prevention": "Prevention Tips"
+  },
+  "schemes": {
+    "title": "Government Schemes",
+    "subtitle": "Explore active agricultural schemes and subsidies",
+    "search": "Search schemes...",
+    "all": "All Schemes",
+    "bookmarks": "My Bookmarks",
+    "apply": "Apply Now",
+    "save": "Save Scheme",
+    "saved": "Saved",
+    "filterState": "All States",
+    "filterCategory": "All Categories"
+  },
+  "expenses": {
+    "title": "Expense Tracker",
+    "subtitle": "Monitor your farm income and expenses",
+    "add": "Add Transaction",
+    "type": "Type",
+    "income": "Income",
+    "expense": "Expense",
+    "category": "Category",
+    "amount": "Amount",
+    "date": "Date",
+    "summary": "Summary",
+    "history": "Transaction History"
+  }
+}

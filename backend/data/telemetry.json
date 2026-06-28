@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "data": {
+    "temperature": 23.9,
+    "humidity": 76.4,
+    "soilMoisture": 71.5,
+    "nitrogen": 105,
+    "phosphorus": 41,
+    "potassium": 180,
+    "ph": 6.6,
+    "rainfall": 0,
+    "timestamp": "2026-06-28T16:42:06.648Z"
+  }
+}
