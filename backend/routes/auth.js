@@ -155,16 +155,12 @@ router.post(
       // Generate token since they are now verified and logged in essentially
       const token = generateToken(user._id, user.role);
 
-      // Send Welcome Email
-      try {
-        await sendEmail({
-          email: user.email,
-          subject: "Welcome to Agri-SmartConnect! 🎉",
-          message: templates.welcome(user.name),
-        });
-      } catch (err) {
-        console.error("Welcome email failed", err);
-      }
+      // Send Welcome Email asynchronously in background so it doesn't block the API response
+      sendEmail({
+        email: user.email,
+        subject: "Welcome to Agri-SmartConnect! 🎉",
+        message: templates.welcome(user.name),
+      }).catch(err => console.error("Welcome email failed:", err));
 
       res.status(200).json({
         success: true,
@@ -353,21 +349,16 @@ router.post(
 
       const message = templates.reset(user.name, resetUrl);
 
-      try {
-        await sendEmail({
-          email: user.email,
-          subject: "Password Reset - Agri-SmartConnect",
-          message,
-        });
+      // Send Reset Email asynchronously in background so it doesn't block the API response
+      sendEmail({
+        email: user.email,
+        subject: "Password Reset - Agri-SmartConnect",
+        message,
+      }).catch(err => {
+        console.error("Forgot password email failed:", err);
+      });
 
-        res.status(200).json({ success: true, message: "Email sent with password reset instructions." });
-      } catch (err) {
-        user.resetPasswordToken = undefined;
-        user.resetPasswordExpire = undefined;
-        await user.save({ validateBeforeSave: false });
-
-        return res.status(500).json({ success: false, message: "Email could not be sent." });
-      }
+      res.status(200).json({ success: true, message: "Email sent with password reset instructions." });
     } catch (err) {
       console.error("Forgot password error:", err);
       res.status(500).json({ success: false, message: "Server error." });
