@@ -127,7 +127,15 @@ const CROP_EMOJIS = {
 function DashboardContent() {
   const lang = useBuyerLang();
   const t    = bt[lang] || bt.en;
-  const user = JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "{}");
+  const getUser = () => {
+    try {
+      const uStr = localStorage.getItem("user") || sessionStorage.getItem("user");
+      return uStr && uStr !== "undefined" && uStr !== "null" ? JSON.parse(uStr) : {};
+    } catch {
+      return {};
+    }
+  };
+  const user    = getUser();
 
   const [orders,    setOrders]    = useState([]);
   const [auctions,  setAuctions]  = useState([]);

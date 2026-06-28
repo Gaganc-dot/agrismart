@@ -40,7 +40,15 @@ const navItems = (lang) => [
 function Sidebar({ lang, setLang, open, setOpen }) {
   const location = useLocation();
   const navigate = useNavigate();
-  const user     = JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "{}");
+  const getUser = () => {
+    try {
+      const uStr = localStorage.getItem("user") || sessionStorage.getItem("user");
+      return uStr && uStr !== "undefined" && uStr !== "null" ? JSON.parse(uStr) : {};
+    } catch {
+      return {};
+    }
+  };
+  const user    = getUser();
   const items    = navItems(lang);
   const t        = getLang(lang);
 
@@ -154,7 +162,15 @@ function Header({ lang, setLang, setOpen }) {
             ? location.pathname === "/buyer/browse" && !location.search.includes("equipment")
             : location.pathname === p;
       });
-  const user     = JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "{}");
+  const getUser = () => {
+    try {
+      const uStr = localStorage.getItem("user") || sessionStorage.getItem("user");
+      return uStr && uStr !== "undefined" && uStr !== "null" ? JSON.parse(uStr) : {};
+    } catch {
+      return {};
+    }
+  };
+  const user    = getUser();
   const t        = getLang(lang);
 
   return (
@@ -188,9 +204,13 @@ function Header({ lang, setLang, setOpen }) {
 
 export default function BuyerLayout({ children }) {
   const [lang, setLang] = useState(() => {
-    return localStorage.getItem('agri_lang') ||
-      JSON.parse(localStorage.getItem("user") || sessionStorage.getItem("user") || "{}").preferredLanguage ||
-      "en";
+    try {
+      const uStr = localStorage.getItem("user") || sessionStorage.getItem("user");
+      const u = uStr && uStr !== "undefined" && uStr !== "null" ? JSON.parse(uStr) : null;
+      return localStorage.getItem('agri_lang') || u?.preferredLanguage || "en";
+    } catch {
+      return "en";
+    }
   });
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
